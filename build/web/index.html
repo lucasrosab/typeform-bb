@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="DIREC / Divisão Conexão / T1077070 Lucas Rosa Barbosa" />
+
+        <title>Abordagem de Clientes</title>
+
+        <link rel="shortcut icon" href="https://direc.bb.com.br/repositorio/img/bb.ico" type="image/x-icon">
+        <link href="css/lib/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+        <header>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="/portal"><img src="https://direc.bb.com.br/repositorio/img/logo_direc.png" alt="Inteligência de Negócios" title="Portal de Informações PF" style="height: 40px;"></a>
+                </li>
+            </ul>
+        </header>
+
+        <section ng-app="main">
+            <article ng-controller="formularioController">
+                <div class="container-fluid">
+                    <h1>Abordagem de Clientes</h1>
+                    <br>
+                    <form>
+                        <div class="form-group">
+                            <label>Qual o modelo de relacionamento do cliente?</label>
+                            <select class="custom-select" id="resposta1" ng-model="respostas.resposta1" name="resposta1">
+                                <option value="">Selecione</option>
+                                <option ng-repeat=" modelo in modeloRelacionamento">{{modelo.nome}}</option>
+                            </select>
+                        </div><!-- Pergunta 1-->
+                        <div class="form-group">
+                            <label>Qual o MCI do cliente abordado?</label>
+                            <input type="text" class="form-control" id="resposta2" placeholder="* Não inserir o dígito" name="resposta2" ng-model="respostas.resposta2">
+                        </div><!-- Pergunta 2 -->
+                        <div class="form-group">
+                            <label>O(a) senhor(a) está satisfeito(a) com o atendimento prestado pelos funcionários do Banco do Brasil?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta3" id="opcao1-resposta3" value="sim" ng-model="respostas.resposta3">
+                                <label class="form-check-label" for="opcao1-resposta3">Sim</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta3" id="opcao2-resposta3" value="não" ng-model="respostas.resposta3">
+                                <label class="form-check-label" for="opcao2-resposta3">Não</label>
+                            </div>
+                        </div><!-- Pergunta 3-->
+                        <div class="form-group">
+                            <label>Registre as informações relatadas pelo cliente, incluindo a sua percepção quanto ao sentimento apresentado pelo cliente</label>
+                            <textarea class="form-control" id="resposta4" rows="3" name="resposta4" ng-model="respostas.resposta4"></textarea>
+                        </div><!-- Pergunta 4-->
+                        <div class="form-group">
+                            <label>O(a) senhor(a) tem facilidade para resolver suas solicitações no Banco do Brasil?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta5" id="opcao1-resposta5" value="sim" ng-model="respostas.resposta5">
+                                <label class="form-check-label" for="opcao1-resposta5">Sim</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta5" id="opcao2-resposta5" value="não" ng-model="respostas.resposta5">
+                                <label class="form-check-label" for="opcao2-resposta5">Não</label>
+                            </div>
+                        </div><!-- Pergunta 5-->
+                        <div class="form-group">
+                            <label>Registre as informações relatadas pelo cliente, incluindo a sua percepção quanto ao sentimento apresentado pelo cliente</label>
+                            <textarea class="form-control" id="resposta6" rows="3" name="resposta6" ng-model="respostas.resposta6"></textarea>
+                        </div><!-- Pergunta 6-->
+                        <div class="form-group">
+                            <label>***O(a) senhor(a) conhece o seu gerente?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta7" id="opcao1-resposta7" value="sim" ng-model="respostas.resposta7">
+                                <label class="form-check-label" for="opcao1-resposta7">Sim</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta7" id="opcao2-resposta7" value="não" ng-model="respostas.resposta7">
+                                <label class="form-check-label" for="opcao2-resposta7">Não</label>
+                            </div>
+                        </div><!-- Pergunta 7-->
+                        <div class="form-group">
+                            <label>***Com que frequência seu gerente entra em contato com você?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta8" id="opcao1-resposta8" value="semanalmente" ng-model="respostas.resposta8">
+                                <label class="form-check-label" for="opcao1-resposta8">Semanalmente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta8" id="opcao2-resposta8" value="mensalmente" ng-model="respostas.resposta8">
+                                <label class="form-check-label" for="opcao2-resposta8">Mensalmente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta8" id="opcao3-resposta8" value="raramente" ng-model="respostas.resposta8">
+                                <label class="form-check-label" for="opcao3-resposta8">Raramente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta8" id="opcao4-resposta8" value="nunca" ng-model="respostas.resposta8">
+                                <label class="form-check-label" for="opcao4-resposta8">Nunca</label>
+                            </div>
+                        </div><!-- Pergunta 8-->
+                        <div class="form-group">
+                            <label>Como o senhor avalia o atendimento do Banco do Brasil?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta9" id="opcao1-resposta9" value="pessimo" ng-model="respostas.resposta9">
+                                <label class="form-check-label" for="opcao1-resposta9">Péssimo</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta9" id="opcao2-resposta9" value="ruim" ng-model="respostas.resposta9">
+                                <label class="form-check-label" for="opcao2-resposta9">Ruim</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta9" id="opcao3-resposta9" value="bom" ng-model="respostas.resposta9">
+                                <label class="form-check-label" for="opcao3-resposta9">Bom</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta9" id="opcao4-resposta9" value="otimo" ng-model="respostas.resposta9">
+                                <label class="form-check-label" for="opcao4-resposta9">Ótimo</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta9" id="opcao5-resposta9" value="excelente" ng-model="respostas.resposta9">
+                                <label class="form-check-label" for="opcao5-resposta9">Excelente</label>
+                            </div>
+                        </div><!-- Pergunta 9-->
+                        <div class="form-group">
+                            <label>Registre as informações relatadas pelo cliente, incluindo a sua percepção quanto ao sentimento apresentado pelo cliente</label>
+                            <textarea class="form-control" id="resposta10" name="resposta10" rows="3" ng-model="respostas.resposta10"></textarea>
+                        </div><!-- Pergunta 10-->
+                        <div class="form-group">
+                            <label>Se o Sr (a) pudesse propor uma melhoria no Banco do Brasil, qual seria?</label>
+                            <textarea class="form-control" id="resposta11"  name="resposta11" rows="3" ng-model="respostas.resposta11"></textarea>
+                        </div><!-- Pergunta 11-->
+                        <div class="form-group">
+                            <label>Em uma escala de 0 a 10, o quanto você recomendaria o Banco do Brasil para um amigo ou colega?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao1-resposta12" value="1" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao1-resposta12">1</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao2-resposta12" value="2" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao2-resposta12">2</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao3-resposta12" value="3" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao3-resposta12">3</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao4-resposta12" value="4" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao4-resposta12">4</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao5-resposta12" value="5" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao5-resposta12">5</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao6-resposta12" value="6" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao6-resposta12">6</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao7-resposta12" value="7" ng-model="respostas.resposta12"> 
+                                <label class="form-check-label" for="opcao7-resposta12">7</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao8-resposta12" value="8" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao8-resposta12">8</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao9-resposta12" value="9" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao9-resposta12">9</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="resposta12" id="opcao10-resposta12" value="10" ng-model="respostas.resposta12">
+                                <label class="form-check-label" for="opcao10-resposta12">10</label>
+                            </div>
+                        </div><!-- Pergunta 12-->
+                    </form>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-danger" ng-click="cancelar()">Cancelar</button>
+                        <button type="button" class="btn btn-primary" ng-click="salvar(respostas)">Enviar</button>
+                    </div>
+                </div> 
+            </article>
+        </section>
+        <footer>
+            <h5 class="text-center">© 2019 Banco do Brasil</h5>
+        </footer>
+
+
+        <script src="js/lib/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="js/lib/bootstrap.js" type="text/javascript"></script>
+        <script src="js/lib/angular.js" type="text/javascript"></script>
+        
+        <script src="js/main.js" type="text/javascript"></script>
+        <script src="js/formularioController.js" type="text/javascript"></script>
+        
+    </body>
+</html>
